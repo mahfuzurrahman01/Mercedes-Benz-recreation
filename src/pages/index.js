@@ -2,9 +2,11 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-import Navbar from '@/Components/Navbar'
 const inter = Inter({ subsets: ['latin'] })
-
+import Password from '@/Components/Password/Password'
+import Navbar from '@/Components/Navbar/Navbar'
+import { BsFacebook, BsGithub, BsLinkedin, BsMailbox } from 'react-icons/bs'
+import { FaDev } from 'react-icons/fa'
 export default function Home() {
   return (
     <>
@@ -14,8 +16,23 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <main className="min-h-screen max-h-screen" style={{
+        backgroundImage: 'url("/bg.jpg")',
+        backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center"
+      }}>
         <Navbar />
+        <Password />
+        <div className='text-center mt-24 flex justify-center items-center flex-col'>
+          <p className="text-gray-400 text-2xl">Developer- <span className="text-xl font-light text-white uppercase">Mafuzur Rahman</span></p>
+          <div className='flex justify-center items-center gap-2 mt-5'>
+            <BsGithub  className='p-1 w-7 h-7 bg-pink-600 bg-gradient-to-tl bg-opacity-50 from-violet-800 rounded text-gray-200'/>
+            <FaDev className='p-1 w-7 h-7 bg-pink-600 bg-gradient-to-tl bg-opacity-50 from-violet-800 rounded text-gray-200'/>
+            <BsFacebook className='p-1 w-7 h-7 bg-pink-600 bg-gradient-to-tl bg-opacity-50 from-violet-800 rounded text-gray-200'/>
+            <BsLinkedin className='p-1 w-7 h-7 bg-pink-600 bg-gradient-to-tl bg-opacity-50 from-violet-800 rounded text-gray-200'/>
+            <BsMailbox className='p-1 w-7 h-7 bg-pink-600 bg-gradient-to-tl bg-opacity-50 from-violet-800 rounded text-gray-200'/>
+          </div>
+        </div>
+
       </main>
     </>
   )
